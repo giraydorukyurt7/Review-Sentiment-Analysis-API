@@ -1,19 +1,77 @@
-# KOZMOS SENTIMENT ANALYSIS - NATURAL LANGUAGE PROCESSING
+# Review Sentiment Analysis API
 
+This project is a Flask-based sentiment analysis API for classifying customer reviews as positive or negative using NLP and machine learning models.
 
-## The Story Of The Dataset
+## Overview
 
-"Kozmos, which sells home textiles and casual wear products through Amazon, aims to increase its sales by analyzing the comments received for its products and improving their features according to the complaints it receives. In line with this goal, the comments will be tagged by performing sentiment analysis and a classification model will be created with the tagged data."
+The project focuses on review sentiment classification over an e-commerce review dataset. Although the original dataset includes variables such as star rating, helpful count, title, and review text, this implementation mainly uses the **Review** field for text-based sentiment analysis.
 
-The data set consists of variables indicating the comments made for a specific product group, the comment title, the number of stars, and how many people found the comment useful.
+The workflow includes:
 
-### Dataset contains;
-* 4 Variable
-* 5611 Observation Unit
-* 489 KB
+- sentiment labeling with NLTK's `SentimentIntensityAnalyzer`
+- training baseline machine learning models
+- serving predictions through a Flask-based API
+- testing predictions through a lightweight interface / API flow
 
-### Variables;
-* Star    : Number of stars given to the product.
-* Helpful : Number of people who find the comment helpful.
-* Title   : Title of the comment/short comment.
-* Review  : The comment written to the product.
+This repository is best viewed as a practical NLP + Flask API project rather than a completed full-stack product.
+
+## Dataset Background
+
+The dataset was created in the context of analyzing customer reviews for a product group in order to better understand complaints and satisfaction patterns.
+
+### Dataset contains
+
+- 4 variables
+- 5,611 observations
+
+### Variables
+
+- **Star**: Number of stars given to the product
+- **Helpful**: Number of people who found the comment helpful
+- **Title**: Short review title
+- **Review**: Full customer review text
+
+## Method
+
+The sentiment pipeline is based on review text classification.
+
+Main steps:
+
+1. preprocessing review text
+2. generating sentiment labels with NLTK `SentimentIntensityAnalyzer`
+3. training machine learning models
+4. exposing predictions through Flask
+
+## Models
+
+The project includes sentiment classification models based on:
+
+- Logistic Regression
+- Random Forest
+
+These models are functional and can be tested through the Python-based API flow.
+
+## Application
+
+The backend API is implemented with Flask.
+
+A lightweight frontend / interface was also started for testing predictions, but the main completed component of the project is the Flask-based API and model inference workflow.
+
+## Technologies Used
+
+- Python
+- Flask
+- NLTK
+- scikit-learn
+- Pandas
+- NumPy
+
+## Notes
+
+This project focuses primarily on:
+
+- NLP-based sentiment classification
+- API-oriented deployment logic
+- practical experimentation with classical machine learning models for text analysis
+
+It is not intended to be a polished production interface; the strongest part of the repository is the working sentiment analysis pipeline and Flask API integration.
