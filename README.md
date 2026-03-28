@@ -9,9 +9,9 @@ The project focuses on review sentiment classification over an e-commerce review
 The workflow includes:
 
 - sentiment labeling with NLTK's `SentimentIntensityAnalyzer`
+- TF-IDF vectorization of review text
 - training baseline machine learning models
 - serving predictions through a Flask-based API
-- testing predictions through a lightweight interface / API flow
 
 This repository is best viewed as a practical NLP + Flask API project rather than a completed full-stack product.
 
@@ -39,8 +39,9 @@ Main steps:
 
 1. preprocessing review text
 2. generating sentiment labels with NLTK `SentimentIntensityAnalyzer`
-3. training machine learning models
-4. exposing predictions through Flask
+3. vectorizing review text with TF-IDF
+4. training machine learning models
+5. exposing predictions through Flask
 
 ## Models
 
@@ -50,6 +51,24 @@ The project includes sentiment classification models based on:
 - Random Forest
 
 These models are functional and can be tested through the Python-based API flow.
+
+## Baseline Results
+
+### Logistic Regression
+- Cross-validation score: **0.8832**
+- Test accuracy: **0.9464**
+
+### Random Forest
+- Cross-validation score: **0.9052**
+- Test accuracy: **0.9333**
+
+## Important Note on Evaluation
+
+The sentiment labels used in this project are not manually annotated. They are generated automatically with NLTK's `SentimentIntensityAnalyzer` and then learned by classical machine learning models over the **Review** text.
+
+For that reason, the reported scores should be interpreted as **agreement with automatically generated sentiment labels**, not as a benchmark against a human-annotated gold-standard sentiment dataset.
+
+This makes the project most valuable as a practical **NLP + Flask API implementation** and a classical text classification study.
 
 ## Application
 
